@@ -1,0 +1,60 @@
+<html lang="en">
+<%- include('./partials/header') %>
+
+    <body>
+        <%- include('./partials/nav') %>
+            <form class="signupform">
+                <div class="container">
+                    <div class="form-group">
+                        <label for="email">Email </label>
+                        <input type="text" class="form-control" placeholder="Please enter your email" name="email"
+                            required>
+                        <div class="email error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Please enter your password"
+                            name="password" required>
+                        <div class="password error"></div>
+                    </div>
+                    <button class="btn btn-primary" type="submit">SignUp</button>
+
+                </div>
+
+            </form>
+            <script>
+                const form = document.querySelector('form')
+                const emailError = document.querySelector('.email.error')
+                const passwordError = document.querySelector('.password.error')
+                form.addEventListener('submit', async function (e) {
+                    e.preventDefault()
+                    emailError.textContent = ''
+                    passwordError.textContent = ''
+                    const email = form.email.value
+                    const password = form.password.value
+                    console.log(email, password)
+                    try {
+                        const response = await fetch('/signup', {
+                            method: 'POST',
+                            body: JSON.stringify({ email, password }),
+                            headers: { 'Content-Type': 'application/json' }
+                        })
+                        const data = await response.json()
+                        console.log(data)
+                        if (data.errors) {
+                            emailError.textContent = data.errors.email
+                            passwordError.textContent = data.errors.password
+                        }
+                        if (data.user) {
+                            location.assign('/')
+                        }
+                    }
+                    catch (err) {
+                        console.log(err)
+                    }
+                })
+            </script>
+    </body>
+    <%- include('./partials/footer') %>
+
+</html>

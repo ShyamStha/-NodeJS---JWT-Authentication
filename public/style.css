@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* background-image: linear-gradient(red, yellow); */
+}
+.card-img-top {
+  height: 200px;
+}
+.title {
+  font-family: "Itim", cursive;
+  font-size: 40px;
+  text-shadow: 2px 2px 5px purple;
+}
+.button {
+  display: block !important;
+  margin: 0 auto;
+  margin-top: 50px !important;
+  background-color: purple !important;
+  color: white !important;
+}
+.logoimg {
+  display: block;
+  margin: 0 auto;
+}
+/* warnings */
+.email.error {
+  color: red;
+}
+
+.password.error {
+  color: red;
+}
+/* links-positions */
+.maincontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.links {
+  margin-top: 5px;
+}
+.link1 {
+  margin: 10px;
+}
+.link2 {
+  margin: 10px;
+}
+.link3 {
+  margin: 10px;
+}
+.loginform {
+  /* background-color: red !important; */
+  margin-left: 250px;
+  margin-right: 250px;
+}
+.signupform {
+  margin-left: 250px;
+  margin-right: 250px;
+}
+
+.card-title {
+  text-align: center;
+  font-family: "Itim", cursive;
+}

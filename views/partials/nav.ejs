@@ -1,0 +1,29 @@
+<nav>
+    <div class="maincontainer">
+        <a href="/" style="text-decoration: none;">
+            <h1 class="title">The Pizza house</span></h1>
+        </a>
+        <div class="links">
+            <%if(user){%>
+                <span style="font-weight: bold;font-family: 'Itim', cursive;">Welcome,<%=user.email%></span>
+
+                <a style="text-decoration: none;" href="/logout" class="link3"><button type="button"
+                        class="btn btn-outline-info">Logout</button></a>
+
+
+
+                <%}else{%>
+                    <a style="text-decoration: none;" href="/login" class="link1"><button type="button"
+                            class="btn btn-outline-info">LogIn</button></a>
+                    <a style="text-decoration: none;" href="/signup" class="link2"><button type="button"
+                            class="btn btn-warning" style="background-color: purple !important;
+                    color: white !important;">SignUp</button></a>
+
+                    <%}%>
+
+
+        </div>
+    </div>
+
+
+</nav>
